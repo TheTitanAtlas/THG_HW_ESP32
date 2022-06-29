@@ -1,5 +1,4 @@
 # THG_HW_ESP32
 Micropython project code for tiny_hydro_garden
 
-Add a config.py with SSID and Pswrd for your network
-
+Add a config.py with SSID and Pswrd for your network, also add AIO KEY for adafruit

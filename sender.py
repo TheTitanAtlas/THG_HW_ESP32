@@ -4,13 +4,14 @@ import ubinascii              # Needed to run any MicroPython code
 import machine                # Interfaces with hardware components
 import micropython            # Needed to run any MicroPython code
 import storedata
+import config
 
 
 # Adafruit IO (AIO) configuration
 AIO_SERVER = "io.adafruit.com"
 AIO_PORT = 1883
 AIO_USER = "AtlasO"
-AIO_KEY = "aio_zYPy45ovouvOP3Z67wGolTr4isz9"
+AIO_KEY = config.AIOKEY
 AIO_CLIENT_ID = ubinascii.hexlify(machine.unique_id())  # Can be anything
 TEMP_FEED = "AtlasO/feeds/tinyhydrogarden.temp"
 DISTANCE_FEED = "AtlasO/feeds/tinyhydrogarden.waterlevel"
@@ -24,7 +25,7 @@ def sub_cb(topic, msg):
     elif msg == b"0":
         pass
     else:
-        print("Value is out of bounds") 
+        print("Value is out of bounds")
 
 def send_temp(value):
     print("temp:", value)
